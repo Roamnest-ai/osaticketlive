@@ -1,0 +1,916 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OSA Ticket Live | Kamba Festival 2026</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 25px;
+    font-weight: 800;
+    color: #e21c28;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+/* EVENT IMAGE */
+
+.hero {
+    max-width: 1100px;
+    margin: 25px auto 0;
+    padding: 0 15px;
+}
+
+.hero img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+/* EVENT TITLE */
+
+.event-title {
+    max-width: 1050px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+.event-title h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.event-title p {
+    color: #666;
+}
+
+/* EVENT DETAILS */
+
+.event-details {
+    max-width: 1050px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.details-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.detail {
+    color: #555;
+}
+
+.detail strong {
+    color: #222;
+}
+
+/* TICKETS */
+
+.ticket-section {
+    max-width: 1050px;
+    margin: 35px auto;
+    padding: 0 15px;
+}
+
+.ticket-section h2 {
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.ticket-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* TICKET CARD */
+
+.ticket-card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 22px;
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ticket-name {
+    color: #e21c28;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ticket-type {
+    color: #777;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.ticket-bottom {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    color: #e21c28;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* QUANTITY */
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.quantity button {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+    border: none;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minus {
+    background: #eee;
+    color: #555;
+}
+
+.plus {
+    background: #e21c28;
+    color: white;
+}
+
+.quantity-number {
+    min-width: 20px;
+    text-align: center;
+    color: #e21c28;
+    font-weight: bold;
+}
+
+/* CHECKOUT */
+
+.checkout {
+    max-width: 1050px;
+    margin: 30px auto 50px;
+    padding: 25px;
+
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #eee;
+
+    text-align: right;
+}
+
+.total {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.continue {
+    background: #e21c28;
+    color: white;
+
+    border: none;
+    padding: 14px 32px;
+
+    border-radius: 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.continue:hover {
+    background: #c91621;
+}
+
+/* FOOTER */
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.footer-note {
+    color: #bbb;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .ticket-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin-left: 8px;
+    }
+
+    .ticket-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-title h1 {
+        font-size: 27px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo-text">
+        OSA TICKET LIVE
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#tickets">Tickets</a>
+        <a href="#">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- EVENT POSTER -->
+
+<section class="hero">
+
+    <img
+        src="kamba-festival.jpg"
+        alt="Kamba Festival 2026"
+    >
+
+</section>
+
+
+<!-- EVENT TITLE -->
+
+<section class="event-title">
+
+    <h1>
+        Kamba Festival 2026
+    </h1>
+
+    <p>
+        Your celebration. Your culture. Your experience.
+    </p>
+
+</section>
+
+
+<!-- EVENT DETAILS -->
+
+<section class="event-details">
+
+    <div class="details-row">
+
+        <div class="detail">
+            📅 <strong>19 September 2026</strong>
+        </div>
+
+        <div class="detail">
+            🕚 <strong>11:00 AM</strong>
+        </div>
+
+        <div class="detail">
+            📍 <strong>KICC Grounds, Nairobi</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TICKETS -->
+
+<section
+    class="ticket-section"
+    id="tickets"
+>
+
+    <h2>
+        Choose Your Ticket
+    </h2>
+
+
+    <div class="ticket-grid">
+
+
+        <!-- 1 -->
+
+        <div class="ticket-card">
+
+            <div>
+
+                <div class="ticket-name">
+                    Nuseo
+                </div>
+
+                <div class="ticket-type">
+                    Regular
+                </div>
+
+            </div>
+
+            <div class="ticket-bottom">
+
+                <div class="price">
+                    KSh 1,000
+                </div>
+
+                <div class="quantity">
+
+                    <button
+                        class="minus"
+                        onclick="changeQuantity(0,-1)"
+                    >
+                        −
+                    </button>
+
+                    <span
+                        class="quantity-number"
+                        id="quantity-0"
+                    >
+                        0
+                    </span>
+
+                    <button
+                        class="plus"
+                        onclick="changeQuantity(0,1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2 -->
+
+        <div class="ticket-card">
+
+            <div>
+
+                <div class="ticket-name">
+                    Mulekye Oke
+                </div>
+
+                <div class="ticket-type">
+                    Couple
+                </div>
+
+            </div>
+
+            <div class="ticket-bottom">
+
+                <div class="price">
+                    KSh 1,800
+                </div>
+
+                <div class="quantity">
+
+                    <button
+                        class="minus"
+                        onclick="changeQuantity(1,-1)"
+                    >
+                        −
+                    </button>
+
+                    <span
+                        class="quantity-number"
+                        id="quantity-1"
+                    >
+                        0
+                    </span>
+
+                    <button
+                        class="plus"
+                        onclick="changeQuantity(1,1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3 -->
+
+        <div class="ticket-card">
+
+            <div>
+
+                <div class="ticket-name">
+                    Osa we
+                </div>
+
+                <div class="ticket-type">
+                    VIP
+                </div>
+
+            </div>
+
+            <div class="ticket-bottom">
+
+                <div class="price">
+                    KSh 3,000
+                </div>
+
+                <div class="quantity">
+
+                    <button
+                        class="minus"
+                        onclick="changeQuantity(2,-1)"
+                    >
+                        −
+                    </button>
+
+                    <span
+                        class="quantity-number"
+                        id="quantity-2"
+                    >
+                        0
+                    </span>
+
+                    <button
+                        class="plus"
+                        onclick="changeQuantity(2,1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4 -->
+
+        <div class="ticket-card">
+
+            <div>
+
+                <div class="ticket-name">
+                    Mwimbisi
+                </div>
+
+                <div class="ticket-type">
+                    Group of 5
+                </div>
+
+            </div>
+
+            <div class="ticket-bottom">
+
+                <div class="price">
+                    KSh 4,000
+                </div>
+
+                <div class="quantity">
+
+                    <button
+                        class="minus"
+                        onclick="changeQuantity(3,-1)"
+                    >
+                        −
+                    </button>
+
+                    <span
+                        class="quantity-number"
+                        id="quantity-3"
+                    >
+                        0
+                    </span>
+
+                    <button
+                        class="plus"
+                        onclick="changeQuantity(3,1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5 -->
+
+        <div class="ticket-card">
+
+            <div>
+
+                <div class="ticket-name">
+                    Nivo Twii
+                </div>
+
+                <div class="ticket-type">
+                    Couple VIP
+                </div>
+
+            </div>
+
+            <div class="ticket-bottom">
+
+                <div class="price">
+                    KSh 5,500
+                </div>
+
+                <div class="quantity">
+
+                    <button
+                        class="minus"
+                        onclick="changeQuantity(4,-1)"
+                    >
+                        −
+                    </button>
+
+                    <span
+                        class="quantity-number"
+                        id="quantity-4"
+                    >
+                        0
+                    </span>
+
+                    <button
+                        class="plus"
+                        onclick="changeQuantity(4,1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6 -->
+
+        <div class="ticket-card">
+
+            <div>
+
+                <div class="ticket-name">
+                    Mweene Mbesa
+                </div>
+
+                <div class="ticket-type">
+                    Executive VVIP Table of 4
+                </div>
+
+            </div>
+
+            <div class="ticket-bottom">
+
+                <div class="price">
+                    KSh 30,000
+                </div>
+
+                <div class="quantity">
+
+                    <button
+                        class="minus"
+                        onclick="changeQuantity(5,-1)"
+                    >
+                        −
+                    </button>
+
+                    <span
+                        class="quantity-number"
+                        id="quantity-5"
+                    >
+                        0
+                    </span>
+
+                    <button
+                        class="plus"
+                        onclick="changeQuantity(5,1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 7 -->
+
+        <div class="ticket-card">
+
+            <div>
+
+                <div class="ticket-name">
+                    Mundu wi Syindu
+                </div>
+
+                <div class="ticket-type">
+                    Executive VVIP Table of 6
+                </div>
+
+            </div>
+
+            <div class="ticket-bottom">
+
+                <div class="price">
+                    KSh 50,000
+                </div>
+
+                <div class="quantity">
+
+                    <button
+                        class="minus"
+                        onclick="changeQuantity(6,-1)"
+                    >
+                        −
+                    </button>
+
+                    <span
+                        class="quantity-number"
+                        id="quantity-6"
+                    >
+                        0
+                    </span>
+
+                    <button
+                        class="plus"
+                        onclick="changeQuantity(6,1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- TOTAL -->
+
+<section class="checkout">
+
+    <div class="total">
+
+        Total:
+        KSh
+        <span id="total">
+            0
+        </span>
+
+    </div>
+
+    <button
+        class="continue"
+        onclick="continueBooking()"
+    >
+        CONTINUE
+    </button>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 OSA Ticket Live
+    </p>
+
+    <div class="footer-note">
+        Customer service: 0769278027
+    </div>
+
+</footer>
+
+
+<script>
+
+
+const prices = [
+    1000,
+    1800,
+    3000,
+    4000,
+    5500,
+    30000,
+    50000
+];
+
+
+const quantities = [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+];
+
+
+function changeQuantity(ticket, amount) {
+
+    quantities[ticket] += amount;
+
+
+    if (quantities[ticket] < 0) {
+
+        quantities[ticket] = 0;
+
+    }
+
+
+    document.getElementById(
+        "quantity-" + ticket
+    ).textContent =
+        quantities[ticket];
+
+
+    calculateTotal();
+
+}
+
+
+function calculateTotal() {
+
+    let total = 0;
+
+
+    for (
+        let i = 0;
+        i < prices.length;
+        i++
+    ) {
+
+        total +=
+            prices[i] *
+            quantities[i];
+
+    }
+
+
+    document.getElementById(
+        "total"
+    ).textContent =
+        total.toLocaleString();
+
+}
+
+
+function continueBooking() {
+
+    let total = 0;
+
+
+    for (
+        let i = 0;
+        i < prices.length;
+        i++
+    ) {
+
+        total +=
+            prices[i] *
+            quantities[i];
+
+    }
+
+
+    if (total === 0) {
+
+        alert(
+            "Please select at least one ticket."
+        );
+
+        return;
+
+    }
+
+
+    const order = {
+
+        quantities: [...quantities],
+
+        total: total
+
+    };
+
+
+    localStorage.setItem(
+        "osaOrder",
+        JSON.stringify(order)
+    );
+
+
+    window.location.href =
+        "checkout.html";
+
+}
+
+
+</script>
+
+
+</body>
+</html>
